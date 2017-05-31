@@ -40,6 +40,10 @@
 
 *.smod
 
+*.rar
+
+*.zip
+
 
 
 # Compiled Static libraries
