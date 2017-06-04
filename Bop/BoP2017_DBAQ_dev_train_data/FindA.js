@@ -1,13 +1,25 @@
 var fs = require('fs');
-fs.readFile('ResultAnswer.dev.txt', (err, data) => {
+fs.readFile('FAnswer.txt', (err, data) => {
 	if (err) {
 		console.log(err.message);
 		return;
 	}
+	console.log(data.toString());
 	var ques = data.toString().split('	');
+	//console.log(ques[2]);
 	ques.forEach((value, index, ques) => {
-		var fd = fs.openSync('ResultAnswer.dev.js.txt', 'a', 0666);
+		while (value.includes('\r')) {
+			value = value.replace('\r', '');
+		}
+		while (value.includes('\n')) {
+			value = value.replace('\n', '');
+		}
+		while (value.includes('##')) {
+			value = value.replace('##', '\r\n');
+		}
+		var fd = fs.openSync('FAnswer.js.txt', 'a', 0666);
 		fs.writeSync(fd, value);
+		//fs.writeSync(fd, '\r\n');
 		fs.closeSync(fd);
 	});
 	console.log('OK');

@@ -4,8 +4,10 @@
 #include<cstring>
 using namespace std;
 
+//ifstream in("BoP2017-DBQA.train.txt");
 ifstream in("BoP2017-DBQA.dev.txt");
-ofstream out("ResultQuestions.dev.txt");
+//ofstream out("ResultQuestions.train.txt");
+ofstream out("FQuestion.txt");
 
 int main()
 {
@@ -15,9 +17,10 @@ int main()
 	while(in>>ans>>q)
 	{
 		getline(in, a);
-		if(q==last) continue;
+		//if(q==last) continue;
+		//if(ans=="1")
 		out<<q<<"\r\n";
-		last=q;
+		//last=q;
 	}
 	return 0;
 }
