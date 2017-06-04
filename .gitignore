@@ -66,3 +66,7 @@
 *.out
 
 *.app
+
+*.txt
+
+*.bin
