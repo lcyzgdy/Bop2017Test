@@ -5,16 +5,16 @@
 using namespace std;
 
 //ifstream in("BoP2017-DBQA.train.txt");
-ifstream in("BoP2017-DBQA.dev.txt");
+ifstream in("BoP2017-DBQA.test.txt");
 //ofstream out("ResultQuestions.train.txt");
-ofstream out("FQuestion.txt");
+ofstream out("FinalQuestion.txt");
 
 int main()
 {
 	string ans;
 	string q, a;
 	string last;
-	while(in>>ans>>q)
+	while(in>>q)
 	{
 		getline(in, a);
 		//if(q==last) continue;

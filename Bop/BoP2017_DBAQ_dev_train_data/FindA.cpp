@@ -4,8 +4,8 @@
 #include<cstring>
 using namespace std;
 
-ifstream in("BoP2017-DBQA.dev.txt");
-ofstream out("FAnswer.txt");
+ifstream in("BoP2017-DBQA.test.txt");
+ofstream out("FinalAnswer.txt");
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
 	string q, a;
 	string last;
 	//in.ignore();
-	while(in>>ans>>q)
+	while(in>>q)
 	{
 		getline(in, a);
 		//if(q==last) continue;

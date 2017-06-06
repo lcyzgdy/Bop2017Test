@@ -1,10 +1,10 @@
 var fs = require('fs');
-fs.readFile('FAnswer.txt', (err, data) => {
+fs.readFile('FinalAnswer.txt', (err, data) => {
 	if (err) {
 		console.log(err.message);
 		return;
 	}
-	console.log(data.toString());
+	//console.log(data.toString());
 	var ques = data.toString().split('	');
 	//console.log(ques[2]);
 	ques.forEach((value, index, ques) => {
@@ -17,7 +17,7 @@ fs.readFile('FAnswer.txt', (err, data) => {
 		while (value.includes('##')) {
 			value = value.replace('##', '\r\n');
 		}
-		var fd = fs.openSync('FAnswer.js.txt', 'a', 0666);
+		var fd = fs.openSync('FinalAnswer.js.txt', 'a', 0666);
 		fs.writeSync(fd, value);
 		//fs.writeSync(fd, '\r\n');
 		fs.closeSync(fd);
